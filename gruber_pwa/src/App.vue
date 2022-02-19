@@ -27,4 +27,7 @@ export default {
 .background{
   background-color: #1A7E91;
 }
+.bottom{
+  background-color: #EFF9F7;
+}
 </style>
