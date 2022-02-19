@@ -3,7 +3,7 @@
     <div class="mt-7">
       <v-row
         ><v-col cols="6">
-          <v-btn height="120" width="120">
+          <v-btn to="/technik" height="120" width="120">
             <span class="text">Technik</span
             ><img src="/images/technik.jpg" height="125" width="125" alt="Technik" />
           </v-btn> </v-col
@@ -42,6 +42,7 @@ export default {
   position: absolute;
   color: white;
   font-size: 120%;
+  font-weight: 20;
   font-family: 'Fredoka One';
 }
 .button {
