@@ -5,7 +5,7 @@
         ><v-col cols="6">
           <v-btn to="/technik" height="120" width="120">
             <span class="text">Technik</span
-            ><img src="/images/technik.jpg" height="125" width="125" alt="Technik" />
+            ><img src="images/technik.jpg" height="125" width="125" alt="Technik" />
           </v-btn> </v-col
         ><v-col cols="6">
           <v-btn height="125" width="125">

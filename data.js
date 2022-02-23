@@ -22,4 +22,20 @@ data: () => ({
       preis: 70,
     },
   ],
+  buecher: [
+    {
+      image: 'images/tech_products/grafikkarte.jpg',
+      product: 'Harry Potter und der Stein der Weisen',
+      owner: 'Mannfred Fredemann',
+      wohnort: 'Langgasse 3/4/12, 1180 Wien',
+      preis: 5,
+    },
+    {
+      image: 'images/tech_products/grafikkarte.jpg',
+      product: 'Harry Potter',
+      owner: 'Mannfred Fredemann',
+      wohnort: 'Langgasse 3/4/12, 1180 Wien',
+      preis: 5,
+    },
+  ],
 });
