@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const path = require('path');
 const cors = require('cors');
-const routes = require('./routes/skirennenv');
+const routes = require('./routes/products');
 
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
