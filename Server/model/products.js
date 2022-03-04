@@ -1,8 +1,13 @@
 const db = require('../db');
 
-async function getProducts(cat) {
-  const { rows } = await db.query('SELECT * FROM products WHERE category = $1', [cat]);
+async function getTechnik() {
+  const { rows } = await db.query("SELECT * FROM products WHERE category='Technik'");
   return rows;
 }
 
-module.exports = { getProducts };
+async function getBuecher() {
+  const { rows } = await db.query("SELECT * FROM products WHERE category='Buecher'");
+  return rows;
+}
+
+module.exports = { getTechnik, getBuecher };

@@ -1,8 +1,12 @@
 const asyncHandler = require('express-async-handler');
 const model = require('../model/products');
 
-const getProducts = asyncHandler(async (req, res) => {
-  res.status(200).json(await model.getProducts(req.params.category));
+const getTechnik = asyncHandler(async (req, res) => {
+  res.status(200).json(await model.getTechnik());
 });
 
-module.exports = { getProducts };
+const getBuecher = asyncHandler(async (req, res) => {
+  res.status(200).json(await model.getBuecher());
+});
+
+module.exports = { getTechnik, getBuecher };

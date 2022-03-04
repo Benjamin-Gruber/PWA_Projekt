@@ -1,2 +1,3 @@
-GET http://localhost:3000/products/Technik
-
+GET http://localhost:3000/products/technik
+###
+GET http://localhost:3000/products/buecher

@@ -23,6 +23,11 @@ const routes = [
     name: 'Technik',
     component: () => import(/* webpackChunkName: "about" */ '../views/Technik.vue'),
   },
+  {
+    path: '/buecher',
+    name: 'Buecher',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Buecher.vue'),
+  },
 ];
 
 const router = new VueRouter({
