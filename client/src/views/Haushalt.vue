@@ -1,18 +1,18 @@
 <template>
   <v-container class="d-flex flex-wrap justify-center">
-    <h4 class="mt-8 container text-center ueberschrift">Technik</h4>
+    <h4 class="mt-8 container text-center ueberschrift">Bücher</h4>
     <v-btn to="/" class="ma-2" color="orange darken-2" dark>
       <v-icon dark left> mdi-arrow-left </v-icon>Back
     </v-btn>
-    <div class="mb-5" v-for="t in technik" :key="t.id">
+    <div class="mb-5" v-for="h in haushalt" :key="h.id">
       <v-card class="mt-10" width="300">
         <div class="d-flex justify-center img">
-          <img height="350" width="250" :src="t.image" alt="IMAGE" />
+          <img height="350" width="250" :src="h.image" alt="IMAGE" />
         </div>
-        <v-card-title>{{ t.product }}</v-card-title>
+        <v-card-title>{{ h.product }}</v-card-title>
         <v-card-text>
-          <span class="font-weight-black">{{ t.owner }}</span> <br />
-          <span class="preis font-weight-black">{{ t.price }}€</span> <br />
+          <span class="font-weight-black">{{ h.owner }}</span> <br />
+          <span class="preis font-weight-black">{{ h.price }}€</span> <br />
           <v-btn color="warning mt-2"> Details </v-btn>
         </v-card-text>
       </v-card>
@@ -26,22 +26,22 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      technik: [],
+      haushalt: [],
     };
   },
 
   created() {
-    this.getTechnik();
+    this.getHaushalt();
   },
 
   methods: {
-    async getTechnik() {
+    async getHaushalt() {
       try {
         const { data } = await axios({
-          url: `http://localhost:3000/products/technik`,
+          url: `http://localhost:3000/products/haushalt`,
           method: 'GET',
         });
-        this.technik = data;
+        this.haushalt = data;
       } catch (error) {
         console.error(error);
       }
