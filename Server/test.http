@@ -1,3 +1,7 @@
 GET http://localhost:3000/products/technik
 ###
 GET http://localhost:3000/products/buecher
+###
+GET http://localhost:3000/products/sport
+###
+GET http://localhost:3000/products/haushalt

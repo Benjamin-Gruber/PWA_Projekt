@@ -28,6 +28,11 @@ const routes = [
     name: 'Buecher',
     component: () => import(/* webpackChunkName: "about" */ '../views/Buecher.vue'),
   },
+  {
+    path: '/sport',
+    name: 'Sport',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Sport.vue'),
+  },
 ];
 
 const router = new VueRouter({

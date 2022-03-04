@@ -10,4 +10,14 @@ async function getBuecher() {
   return rows;
 }
 
-module.exports = { getTechnik, getBuecher };
+async function getSport() {
+  const { rows } = await db.query("SELECT * FROM products WHERE category='Sport'");
+  return rows;
+}
+
+async function getHaushalt() {
+  const { rows } = await db.query("SELECT * FROM products WHERE category='Haushalt'");
+  return rows;
+}
+
+module.exports = { getTechnik, getBuecher, getSport, getHaushalt };

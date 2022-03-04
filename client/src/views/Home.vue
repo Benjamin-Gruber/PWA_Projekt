@@ -14,11 +14,11 @@
       ></v-row>
       <v-row
         ><v-col class="mt-4" cols="6">
-          <v-btn height="125" width="125">
+          <v-btn to="/sport" height="125" width="125">
             <span class="text">Sport</span
             ><img src="/images/sport.jpg" height="125" width="125" alt="Technik" /> </v-btn></v-col
         ><v-col class="mt-4" cols="6">
-          <v-btn height="125" width="125">
+          <v-btn to="/haushalt" height="125" width="125">
             <span class="text">Haushalt</span
             ><img src="/images/haushalt.jpg" height="125" width="125" alt="Technik" /> </v-btn></v-col
       ></v-row>
