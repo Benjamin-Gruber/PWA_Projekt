@@ -24,10 +24,10 @@ export default {
 .title {
   font-family: 'Fredoka One';
 }
-.background{
-  background-color: #1A7E91;
+.background {
+  background-color: #1a7e91;
 }
-.bottom{
-  background-color: #EFF9F7;
+.bottom {
+  background-color: #eff9f7;
 }
 </style>

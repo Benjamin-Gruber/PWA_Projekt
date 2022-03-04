@@ -1,9 +1,14 @@
 <template>
   <v-container class="d-flex flex-wrap justify-center">
     <h4 class="mt-8 container text-center ueberschrift">Technik</h4>
-    <div class="mb-5" v-for="t in technik" :key="t.name">
-      <v-card class="mt-10" max-width="344">
-        <img height="200" width="250" :src="t.image" alt="IMAGE" />
+    <v-btn to="/" class="ma-2" color="orange darken-2" dark>
+      <v-icon dark left> mdi-arrow-left </v-icon>Back
+    </v-btn>
+    <div class="mb-5" v-for="t in technik" :key="t.id">
+      <v-card class="mt-10" width="300">
+        <div class="d-flex justify-center img">
+          <img height="250" width="250" :src="t.image" alt="IMAGE" />
+        </div>
         <v-card-title>{{ t.product }}</v-card-title>
         <v-card-text>
           <span class="font-weight-black">{{ t.owner }}</span> <br />
@@ -25,7 +30,7 @@ export default {
     };
   },
 
-  created () {
+  created() {
     this.getTechnik();
   },
 
@@ -55,5 +60,8 @@ export default {
   font-size: 140%;
   font-weight: 20;
   font-family: 'Fredoka One';
+}
+.img {
+  background-color: black;
 }
 </style>

@@ -8,7 +8,7 @@
             ><img src="images/technik.jpg" height="125" width="125" alt="Technik" />
           </v-btn> </v-col
         ><v-col cols="6">
-          <v-btn height="125" width="125">
+          <v-btn to="/buecher" height="125" width="125">
             <span class="text">Bücher</span
             ><img src="/images/buecher.jpg" height="125" width="125" alt="Technik" /> </v-btn></v-col
       ></v-row>
