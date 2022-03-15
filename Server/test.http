@@ -5,3 +5,18 @@ GET http://localhost:3000/products/buecher
 GET http://localhost:3000/products/sport
 ###
 GET http://localhost:3000/products/haushalt
+###
+DELETE http://localhost:3000/products/13
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "wohnort": "asdf", 
+  "owner": "asdf", 
+  "image": , 
+  "price": 3, 
+  "category": "Technik", 
+  "product": "asdf"
+}
+###

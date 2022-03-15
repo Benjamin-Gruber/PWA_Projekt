@@ -38,6 +38,11 @@ const routes = [
     name: 'Haushalt',
     component: () => import(/* webpackChunkName: "about" */ '../views/Haushalt.vue'),
   },
+  {
+    path: '/addProduct',
+    name: 'AddProduct',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AddProduct.vue'),
+  },
 ];
 
 const router = new VueRouter({

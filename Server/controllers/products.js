@@ -17,4 +17,19 @@ const getHaushalt = asyncHandler(async (req, res) => {
   res.status(200).json(await model.getHaushalt());
 });
 
-module.exports = { getTechnik, getBuecher, getSport, getHaushalt };
+const delProduct = asyncHandler(async (req, res) => {
+  res.status(200).json(await model.delProduct(req.params.id));
+});
+
+const postProduct = asyncHandler(async (req, res) => {
+  res.status(200).json(await model.postProduct(req.body));
+});
+
+module.exports = {
+  getTechnik,
+  getBuecher,
+  getSport,
+  getHaushalt,
+  delProduct,
+  postProduct,
+};

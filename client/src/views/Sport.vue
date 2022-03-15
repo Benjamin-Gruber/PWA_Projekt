@@ -13,7 +13,10 @@
         <v-card-text>
           <span class="font-weight-black">{{ s.owner }}</span> <br />
           <span class="preis font-weight-black">{{ s.price }}€</span> <br />
-          <v-btn color="warning mt-2"> Details </v-btn>
+          <v-row>
+            <v-spacer></v-spacer>
+            <v-btn @click="delProduct(s.id)" color="red" icon><v-icon big>mdi-delete</v-icon></v-btn>
+          </v-row>
         </v-card-text>
       </v-card>
     </div>
@@ -46,13 +49,25 @@ export default {
         console.error(error);
       }
     },
+
+    async delProduct(id) {
+      try {
+        await axios({
+          url: `http://localhost:3000/products/${id}`,
+          method: 'DELETE',
+        });
+        this.getSport();
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .preis {
-  color: #ff0000;
+  color: #00c853;
   font-size: 125%;
 }
 .ueberschrift {

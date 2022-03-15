@@ -23,7 +23,7 @@
             ><img src="/images/haushalt.jpg" height="125" width="125" alt="Technik" /> </v-btn></v-col
       ></v-row>
       <div class="d-flex justify-center">
-        <v-btn color="warning" width="210px" class="button mt-15">Produkt hinzufügen</v-btn>
+        <v-btn to="/addProduct" color="warning" width="210px" class="button mt-15">Produkt hinzufügen</v-btn>
       </div>
     </div>
   </v-container>

@@ -1,6 +1,6 @@
 <template>
   <v-container class="d-flex flex-wrap justify-center">
-    <h4 class="mt-8 container text-center ueberschrift">Bücher</h4>
+    <h4 class="mt-8 container text-center ueberschrift">Haushalt</h4>
     <v-btn to="/" class="ma-2" color="orange darken-2" dark>
       <v-icon dark left> mdi-arrow-left </v-icon>Back
     </v-btn>
@@ -13,7 +13,10 @@
         <v-card-text>
           <span class="font-weight-black">{{ h.owner }}</span> <br />
           <span class="preis font-weight-black">{{ h.price }}€</span> <br />
-          <v-btn color="warning mt-2"> Details </v-btn>
+          <v-row>
+            <v-spacer></v-spacer>
+            <v-btn @click="delProduct(h.id)" color="red" icon><v-icon big>mdi-delete</v-icon></v-btn>
+          </v-row>
         </v-card-text>
       </v-card>
     </div>
@@ -46,13 +49,25 @@ export default {
         console.error(error);
       }
     },
+
+    async delProduct(id) {
+      try {
+        await axios({
+          url: `http://localhost:3000/products/${id}`,
+          method: 'DELETE',
+        });
+        this.getHaushalt();
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .preis {
-  color: #ff0000;
+  color: #00c853;
   font-size: 125%;
 }
 .ueberschrift {
