@@ -41,7 +41,7 @@ export default {
     async getSport() {
       try {
         const { data } = await axios({
-          url: `http://localhost:3000/products/sport`,
+          url: `/products/sport`,
           method: 'GET',
         });
         this.sport = data;
@@ -53,7 +53,7 @@ export default {
     async delProduct(id) {
       try {
         await axios({
-          url: `http://localhost:3000/products/${id}`,
+          url: `/products/${id}`,
           method: 'DELETE',
         });
         this.getSport();

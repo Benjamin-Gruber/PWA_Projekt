@@ -5,22 +5,28 @@
         ><v-col cols="6">
           <v-btn to="/technik" height="120" width="120">
             <span class="text">Technik</span
-            ><img src="images/technik.jpg" height="125" width="125" alt="Technik" />
-          </v-btn> </v-col
-        ><v-col cols="6">
+            ><img src="/technik.JPG" height="125" width="125" alt="Technik" />
+          </v-btn>
+        </v-col>
+        <v-col cols="6">
           <v-btn to="/buecher" height="125" width="125">
             <span class="text">Bücher</span
-            ><img src="/images/buecher.jpg" height="125" width="125" alt="Technik" /> </v-btn></v-col
+            ><img src="/buecher.JPG" height="125" width="125" alt="Technik" /> </v-btn></v-col
       ></v-row>
       <v-row
         ><v-col class="mt-4" cols="6">
           <v-btn to="/sport" height="125" width="125">
             <span class="text">Sport</span
-            ><img src="/images/sport.jpg" height="125" width="125" alt="Technik" /> </v-btn></v-col
+            ><img src="/sport.JPG" height="125" width="125" alt="Technik" /> </v-btn></v-col
         ><v-col class="mt-4" cols="6">
           <v-btn to="/haushalt" height="125" width="125">
             <span class="text">Haushalt</span
-            ><img src="/images/haushalt.jpg" height="125" width="125" alt="Technik" /> </v-btn></v-col
+            ><img
+              src="/haushalt.JPG"
+              height="125"
+              width="125"
+              alt="Technik"
+            /> </v-btn></v-col
       ></v-row>
       <div class="d-flex justify-center">
         <v-btn to="/addProduct" color="warning" width="210px" class="button mt-15">Produkt hinzufügen</v-btn>

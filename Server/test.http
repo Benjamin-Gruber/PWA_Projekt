@@ -14,7 +14,7 @@ Content-Type: application/json
 {
   "wohnort": "asdf", 
   "owner": "asdf", 
-  "image": "", 
+  "image": "",
   "price": 3, 
   "category": "Technik", 
   "product": "asdf"

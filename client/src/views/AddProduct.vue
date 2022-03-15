@@ -2,42 +2,84 @@
   <div>
     <div class="d-flex justify-center mt-8">
       <h2 class="text text-center" justify-center text-center>Produkt Hinzufügen</h2>
-      <camera v-if="hidden" @img="getImage" @close="closeCamera" />
-      <v-btn color="warning" width="210px" class="button mt-15">Foto aufnehmen</v-btn>
+      <v-btn @click="openCamera" color="warning" width="210px" class="button mt-15">Foto aufnehmen</v-btn>
+      <Camera @img="getImage" v-if="hidden" @close="closeCamera" />
     </div>
 
     <v-container class="d-flex flex-column justify-center">
-      <v-text-field class="mt-10" label="Name" solo dense v-model="product.name"></v-text-field>
-      <v-text-field class="mt-10" label="Besitzer" solo dense v-model="product.owner"></v-text-field>
-      <v-text-field class="mt-10" label="Preis" solo dense v-model="product.price"></v-text-field>
-      <v-text-field class="mt-10" label="Wohnort" solo dense v-model="product.wohnort"></v-text-field>
-      <v-text-field class="mt-10" label="Kategorie" solo dense v-model="product.category"></v-text-field>
-      <v-btn @click="postProduct()" color="success" width="210px" class="button mt-15">Hinzufügen</v-btn>
+      <v-text-field class="mt-10" label="Name" solo dense v-model="name"></v-text-field>
+      <v-text-field class="mt-10" label="Besitzer" solo dense v-model="owner"></v-text-field>
+      <v-text-field class="mt-10" label="Preis" solo dense v-model="price"></v-text-field>
+      <v-text-field class="mt-10" label="Wohnort" solo dense v-model="wohnort"></v-text-field>
+      <v-text-field class="mt-10" label="Kategorie" solo dense v-model="category"></v-text-field>
+      <v-btn
+        @click="postProduct(name, owner, price, wohnort, category)"
+        color="success"
+        width="210px"
+        class="button mt-15"
+        
+        >Hinzufügen</v-btn
+      >
     </v-container>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Camera from '@/components/Camera.vue';
+
 export default {
   data() {
     return {
-      product: {},
+      name: '',
+      owner: '',
+      price: '',
+      wohnort: '',
+      category: '',
+      hidden: false,
       rules: [(value) => !!value || 'Required.'],
+      image: '',
     };
+  },
+  props: {
+    img: {
+      type: String,
+    },
+  },
+
+  components: {
+    Camera,
   },
 
   methods: {
-    async postProduct() {
+    async postProduct(name, owner, price, wohnort, category) {
       try {
         await axios({
-          url: 'http://localhost:3000/products',
+          url: '/products',
           method: 'POST',
-          data: this.product,
+          data: {
+            name: name,
+            owner: owner,
+            price: price,
+            wohnort: wohnort,
+            category: category,
+            image: this.image,
+          },
         });
+        this.$router.push({name: "Home"});
       } catch (error) {
         console.error(error);
       }
+    },
+    openCamera() {
+      this.hidden = true;
+    },
+    getImage(img) {
+      this.image = img;
+      this.hidden = false;
+    },
+    closeCamera() {
+      this.hidden = false;
     },
   },
 };

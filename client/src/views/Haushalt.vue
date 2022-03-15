@@ -41,7 +41,7 @@ export default {
     async getHaushalt() {
       try {
         const { data } = await axios({
-          url: `http://localhost:3000/products/haushalt`,
+          url: `/products/haushalt`,
           method: 'GET',
         });
         this.haushalt = data;
@@ -53,7 +53,7 @@ export default {
     async delProduct(id) {
       try {
         await axios({
-          url: `http://localhost:3000/products/${id}`,
+          url: `/products/${id}`,
           method: 'DELETE',
         });
         this.getHaushalt();

@@ -42,7 +42,7 @@ export default {
     async getTechnik() {
       try {
         const { data } = await axios({
-          url: `http://localhost:3000/products/technik`,
+          url: `/products/technik`,
           method: 'GET',
         });
         this.technik = data;
@@ -54,7 +54,7 @@ export default {
     async delProduct(id) {
       try {
         await axios({
-          url: `http://localhost:3000/products/${id}`,
+          url: `/products/${id}`,
           method: 'DELETE',
         });
         this.getTechnik();

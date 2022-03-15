@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const path = require('path');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const routes = require('./routes/products');
 
 const { notFound, errorHandler } = require('./middleware/errorHandler');
@@ -11,6 +12,9 @@ require('colors');
 require('dotenv').config();
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: false }));
+app.use(bodyParser.json({ limit: '5mb' }));
 
 app.use(morgan('dev'));
 
