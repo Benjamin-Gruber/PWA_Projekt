@@ -27,14 +27,12 @@ async function delProduct(id) {
 
 const postProduct = async ({ wohnort, owner, image, price, category, product }) => {
   const vorhanden = await db.query('SELECT max(id) from products');
-  console.log(vorhanden);
   const maxId = vorhanden.rows[0].max + 1;
   const { rows } = await db.query(
     `INSERT INTO products (wohnort, id, owner, image, price, category, product) 
-    VALUES($1, $2, $3, $4, $5, $6) RETURNING *`,
+    VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
     [wohnort, maxId, owner, image, price, category, product],
   );
-  console.log(rows);
   return rows;
 };
 

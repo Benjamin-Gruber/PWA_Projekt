@@ -7,22 +7,38 @@
     </div>
 
     <v-container class="d-flex flex-column justify-center">
-      <v-text-field class="mt-10" label="Name" solo dense></v-text-field>
-      <v-text-field class="mt-10" label="Besitzer" solo dense></v-text-field>
-      <v-text-field class="mt-10" label="Preis" solo dense></v-text-field>
-      <v-text-field class="mt-10" label="Wohnort" solo dense></v-text-field>
-      <v-text-field class="mt-10" label="Kategorie" solo dense></v-text-field>
-      <v-btn color="success" width="210px" class="button mt-15">Hinzufügen</v-btn>
+      <v-text-field class="mt-10" label="Name" solo dense v-model="product.name"></v-text-field>
+      <v-text-field class="mt-10" label="Besitzer" solo dense v-model="product.owner"></v-text-field>
+      <v-text-field class="mt-10" label="Preis" solo dense v-model="product.price"></v-text-field>
+      <v-text-field class="mt-10" label="Wohnort" solo dense v-model="product.wohnort"></v-text-field>
+      <v-text-field class="mt-10" label="Kategorie" solo dense v-model="product.category"></v-text-field>
+      <v-btn @click="postProduct()" color="success" width="210px" class="button mt-15">Hinzufügen</v-btn>
     </v-container>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
+      product: {},
       rules: [(value) => !!value || 'Required.'],
     };
+  },
+
+  methods: {
+    async postProduct() {
+      try {
+        await axios({
+          url: 'http://localhost:3000/products',
+          method: 'POST',
+          data: this.product,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 };
 </script>
